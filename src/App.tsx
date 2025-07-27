@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen flex flex-col font-sans bg-background text-foreground p-6">
+    <div className="h-screen flex flex-col font-sans bg-background text-foreground p-4">
       <Header
         isCollapsed={isSidebarCollapsed}
         setIsSidebarCollapsed={setIsSidebarCollapsed}
@@ -36,7 +36,7 @@ function App() {
           isCollapsed={isSidebarCollapsed}
         />
         <main className="flex-1 overflow-y-auto bg-surface self-stretch">
-          <div className="p-6">{renderPage()}</div>
+          <div className="p-4">{renderPage()}</div>
         </main>
       </div>
       <Player />
