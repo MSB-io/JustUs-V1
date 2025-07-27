@@ -56,9 +56,7 @@ const Header: React.FC<HeaderProps> = ({
           <Bell className="h-6 w-6 text-muted-foreground" />
         </button>
         <button className="p-2 rounded-xl hover:bg-muted">
-          
-            <User className="h-6 w-6 text-muted-foreground" />
-          
+          <User className="h-6 w-6 text-muted-foreground" />
         </button>
       </div>
     </header>

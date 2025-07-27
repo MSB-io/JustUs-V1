@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
-import { Plus } from 'lucide-react';
-import { cn } from '../lib/utils';
-import { userLibraryPlaylists, savedAlbums, followedArtists } from '../constants/data';
-import MediaCard from '../components/MediaCard';
-import PlaylistCard from '../components/PlaylistCard';
+import React, { useState } from "react";
+import { Plus } from "lucide-react";
+import { cn } from "../lib/utils";
+import {
+  userLibraryPlaylists,
+  savedAlbums,
+  followedArtists,
+} from "../constants/data";
+import MediaCard from "../components/MediaCard";
+import PlaylistCard from "../components/PlaylistCard";
 
-type LibraryTab = 'Playlists' | 'Albums' | 'Artists';
+type LibraryTab = "Playlists" | "Albums" | "Artists";
 
 const LibraryPage = () => {
-  const [activeTab, setActiveTab] = useState<LibraryTab>('Playlists');
+  const [activeTab, setActiveTab] = useState<LibraryTab>("Playlists");
 
-  const tabs: LibraryTab[] = ['Playlists', 'Albums', 'Artists'];
+  const tabs: LibraryTab[] = ["Playlists", "Albums", "Artists"];
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'Playlists':
+      case "Playlists":
         return (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             <div className="bg-gradient-to-br from-primary to-secondary h-full min-h-[120px] rounded-lg p-4 flex flex-col justify-center items-center gap-2 text-primary-foreground cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -26,7 +30,7 @@ const LibraryPage = () => {
             ))}
           </div>
         );
-      case 'Albums':
+      case "Albums":
         return (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
             {savedAlbums.map((album) => (
@@ -34,7 +38,7 @@ const LibraryPage = () => {
             ))}
           </div>
         );
-      case 'Artists':
+      case "Artists":
         return (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
             {followedArtists.map((artist) => (

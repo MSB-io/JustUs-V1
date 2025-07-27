@@ -1,6 +1,6 @@
 export interface Media {
   id: number;
-  type: 'album' | 'playlist' | 'artist' | 'chart';
+  type: "album" | "playlist" | "artist" | "chart";
   title: string;
   subtitle: string;
   artwork: string;

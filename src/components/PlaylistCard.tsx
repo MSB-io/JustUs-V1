@@ -1,6 +1,6 @@
-import React from 'react';
-import { Play } from 'lucide-react';
-import { LibraryPlaylist } from '../types';
+import React from "react";
+import { Play } from "lucide-react";
+import { LibraryPlaylist } from "../types";
 
 interface PlaylistCardProps {
   playlist: LibraryPlaylist;
@@ -21,7 +21,9 @@ const PlaylistCard: React.FC<PlaylistCardProps> = ({ playlist }) => {
       </div>
       <div>
         <h3 className="font-bold text-foreground truncate">{playlist.title}</h3>
-        <p className="text-sm text-muted-foreground truncate">{playlist.description}</p>
+        <p className="text-sm text-muted-foreground truncate">
+          {playlist.description}
+        </p>
       </div>
     </div>
   );

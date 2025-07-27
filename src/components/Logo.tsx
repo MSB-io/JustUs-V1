@@ -1,12 +1,9 @@
-import { Music4 } from 'lucide-react';
-import React from 'react';
+import React from "react";
 
 export const Logo: React.FC = () => {
   return (
     <div className="flex items-center gap-2">
-      <span className="text-xl font-bold tracking-tighter">
-        JustUs
-      </span>
+      <span className="text-xl font-bold tracking-tighter">JustUs</span>
     </div>
   );
 };
