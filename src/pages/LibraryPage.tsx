@@ -52,8 +52,10 @@ const LibraryPage = () => {
   };
 
   return (
-    <div>
-      <div className="p-3 flex items-center gap-4 mb-8 border-b border-border">
+    <main className="p-6 bg-black border border-border rounded-xl">
+      <h1 className="text-4xl font-extrabold tracking-tight mb-8">Your Library</h1>
+
+      <div className="flex items-center gap-4 mb-8 border-b border-border">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -68,7 +70,7 @@ const LibraryPage = () => {
         ))}
       </div>
       <div>{renderContent()}</div>
-    </div>
+    </main>
   );
 };
 
