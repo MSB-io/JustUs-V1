@@ -19,7 +19,7 @@ const MediaSection: React.FC<{ title: string; data: Media[] }> = ({
 
 const HomePage = () => {
   return (
-    <div className="p-3 bg-black border border-border rounded-xl">
+    <div className="p-6 bg-black border border-border rounded-xl">
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-6">Quick picks</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

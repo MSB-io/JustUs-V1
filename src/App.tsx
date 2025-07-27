@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Player from "./components/Player";
@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen flex flex-col font-sans bg-background text-foreground p-4 gap-4">
+    <div className="h-screen flex flex-col font-sans bg-background text-foreground p-6">
       <Header
         isCollapsed={isSidebarCollapsed}
         setIsSidebarCollapsed={setIsSidebarCollapsed}
