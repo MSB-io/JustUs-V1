@@ -36,7 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                   className={cn(
                     "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors duration-200 w-full",
                     isActive && "bg-accent text-foreground",
-                    !isCollapsed && "gap-4"
+                    "gap-4"
                   )}
                   title={isCollapsed ? link.name : undefined}
                 >
@@ -63,7 +63,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           <button
             className={cn(
               "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors duration-200 w-full",
-              !isCollapsed && "gap-4"
+              "gap-4"
             )}
             title={isCollapsed ? "New Playlist" : undefined}
           >
@@ -83,7 +83,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               href="#"
               className={cn(
                 "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors duration-200 w-full",
-                !isCollapsed && "gap-4"
+                "gap-4"
               )}
               title={isCollapsed ? playlist : undefined}
             >
