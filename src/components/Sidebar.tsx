@@ -36,14 +36,14 @@ const Sidebar: React.FC<SidebarProps> = ({
                   className={cn(
                     "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors duration-200 w-full",
                     isActive && "bg-accent text-foreground",
-                    isCollapsed ? "justify-center" : "gap-4"
+                    !isCollapsed && "gap-4"
                   )}
                   title={isCollapsed ? link.name : undefined}
                 >
                   <Icon className="h-6 w-6 flex-shrink-0" />
                   <span
                     className={cn(
-                      "font-semibold whitespace-nowrap overflow-hidden transition-all duration-200 ease-in-out",
+                      "font-semibold whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out",
                       isCollapsed
                         ? "max-w-0 opacity-0"
                         : "max-w-full opacity-100"
@@ -63,14 +63,14 @@ const Sidebar: React.FC<SidebarProps> = ({
           <button
             className={cn(
               "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors duration-200 w-full",
-              isCollapsed ? "justify-center" : "gap-4"
+              !isCollapsed && "gap-4"
             )}
             title={isCollapsed ? "New Playlist" : undefined}
           >
             <Lucide.PlusSquare className="h-6 w-6 flex-shrink-0" />
             <span
               className={cn(
-                "font-semibold whitespace-nowrap overflow-hidden transition-all duration-200 ease-in-out",
+                "font-semibold whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out",
                 isCollapsed
                   ? "max-w-0 opacity-0"
                   : "max-w-full opacity-100"
@@ -85,14 +85,14 @@ const Sidebar: React.FC<SidebarProps> = ({
               href="#"
               className={cn(
                 "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors duration-200 w-full",
-                isCollapsed ? "justify-center" : "gap-4"
+                !isCollapsed && "gap-4"
               )}
               title={isCollapsed ? playlist : undefined}
             >
               <Lucide.Music2 className="h-6 w-6 flex-shrink-0" />
               <span
                 className={cn(
-                  "text-sm font-medium truncate whitespace-nowrap overflow-hidden transition-all duration-200 ease-in-out",
+                  "text-sm font-medium truncate whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out",
                   isCollapsed
                     ? "max-w-0 opacity-0"
                     : "max-w-full opacity-100"
