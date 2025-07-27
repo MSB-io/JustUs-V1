@@ -34,18 +34,23 @@ const Sidebar: React.FC<SidebarProps> = ({
                   key={link.name}
                   onClick={() => setCurrentPage(link.name.toLowerCase())}
                   className={cn(
-                    "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors duration-200",
+                    "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors duration-200 w-full",
                     isActive && "bg-accent text-foreground",
-                    isCollapsed ? "w-12 h-12" : "w-full gap-4"
+                    isCollapsed ? "justify-center" : "gap-4"
                   )}
                   title={isCollapsed ? link.name : undefined}
                 >
                   <Icon className="h-6 w-6 flex-shrink-0" />
-                  {!isCollapsed && (
-                    <span className="font-semibold whitespace-nowrap">
-                      {link.name}
-                    </span>
-                  )}
+                  <span
+                    className={cn(
+                      "font-semibold whitespace-nowrap overflow-hidden transition-all duration-200 ease-in-out",
+                      isCollapsed
+                        ? "max-w-0 opacity-0"
+                        : "max-w-full opacity-100"
+                    )}
+                  >
+                    {link.name}
+                  </span>
                 </button>
               );
             })}
@@ -57,34 +62,44 @@ const Sidebar: React.FC<SidebarProps> = ({
         <div className="flex flex-col gap-3">
           <button
             className={cn(
-              "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors duration-200",
-              isCollapsed ? "w-12 h-12" : "w-full gap-4"
+              "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors duration-200 w-full",
+              isCollapsed ? "justify-center" : "gap-4"
             )}
             title={isCollapsed ? "New Playlist" : undefined}
           >
             <Lucide.PlusSquare className="h-6 w-6 flex-shrink-0" />
-            {!isCollapsed && (
-              <span className="font-semibold whitespace-nowrap">
-                New playlist
-              </span>
-            )}
+            <span
+              className={cn(
+                "font-semibold whitespace-nowrap overflow-hidden transition-all duration-200 ease-in-out",
+                isCollapsed
+                  ? "max-w-0 opacity-0"
+                  : "max-w-full opacity-100"
+              )}
+            >
+              New playlist
+            </span>
           </button>
           {userPlaylists.map((playlist) => (
             <a
               key={playlist}
               href="#"
               className={cn(
-                "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors duration-200",
-                isCollapsed ? "w-12 h-12" : "w-full gap-4"
+                "flex items-center p-3 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors duration-200 w-full",
+                isCollapsed ? "justify-center" : "gap-4"
               )}
               title={isCollapsed ? playlist : undefined}
             >
               <Lucide.Music2 className="h-6 w-6 flex-shrink-0" />
-              {!isCollapsed && (
-                <span className="text-sm font-medium truncate whitespace-nowrap">
-                  {playlist}
-                </span>
-              )}
+              <span
+                className={cn(
+                  "text-sm font-medium truncate whitespace-nowrap overflow-hidden transition-all duration-200 ease-in-out",
+                  isCollapsed
+                    ? "max-w-0 opacity-0"
+                    : "max-w-full opacity-100"
+                )}
+              >
+                {playlist}
+              </span>
             </a>
           ))}
         </div>
