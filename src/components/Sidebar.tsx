@@ -71,9 +71,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             <span
               className={cn(
                 "font-semibold whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out",
-                isCollapsed
-                  ? "max-w-0 opacity-0"
-                  : "max-w-full opacity-100"
+                isCollapsed ? "max-w-0 opacity-0" : "max-w-full opacity-100"
               )}
             >
               New playlist
@@ -93,9 +91,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               <span
                 className={cn(
                   "text-sm font-medium truncate whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out",
-                  isCollapsed
-                    ? "max-w-0 opacity-0"
-                    : "max-w-full opacity-100"
+                  isCollapsed ? "max-w-0 opacity-0" : "max-w-full opacity-100"
                 )}
               >
                 {playlist}
