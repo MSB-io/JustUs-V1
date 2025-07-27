@@ -17,7 +17,7 @@ const MediaSection: React.FC<{ title: string; data: Media[] }> = ({ title, data 
 
 const ExplorePage = () => {
   return (
-    <div className="p-6">
+    <div className="p-3">
       <h1 className="text-4xl font-bold mb-8">Explore</h1>
       
       <MediaSection title="New releases" data={newReleases} />

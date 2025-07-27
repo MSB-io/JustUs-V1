@@ -24,22 +24,22 @@ const Player = () => {
     <footer className="bg-black border border-border px-4 py-4 flex items-center rounded-xl">
       <div className="flex items-center justify-between w-full gap-6">
         {/* Left Section: Playback Controls & Progress */}
-        <div className="p-2 flex-1 flex items-center gap-3 min-w-0">
+        <div className="p-2 flex-1 flex items-center gap-4 min-w-0">
           <button className="text-muted-foreground hover:text-foreground">
-            <SkipBack size={18} />
+            <SkipBack size={20} />
           </button>
           <button
             className="text-foreground hover:scale-105 transition-transform"
             onClick={() => setIsPlaying(!isPlaying)}
           >
             {isPlaying ? (
-              <Pause size={23} className="fill-current" />
+              <Pause size={25} className="fill-current" />
             ) : (
               <Play size={25} className="fill-current" />
             )}
           </button>
           <button className="text-muted-foreground hover:text-foreground">
-            <SkipForward size={18} />
+            <SkipForward size={20} />
           </button>
           <span className="text-xs text-muted-foreground ml-2">1:28</span>
 
@@ -64,30 +64,30 @@ const Player = () => {
             </p>
           </div>
           <button className="text-muted-foreground hover:text-foreground hidden lg:block p-1">
-            <ThumbsUp size={18} />
+            <ThumbsUp size={20} />
           </button>
           <button className="text-muted-foreground hover:text-foreground hidden lg:block p-1">
-            <ThumbsDown size={18} />
+            <ThumbsDown size={20} />
           </button>
           <button className="text-muted-foreground hover:text-foreground hidden lg:block p-1">
-            <MoreHorizontal size={18} />
+            <MoreHorizontal size={20} />
           </button>
         </div>
 
         {/* Right Section: Other Controls */}
-        <div className="p-2 flex-1 flex items-center justify-end gap-3 min-w-0">
+        <div className="p-2 flex-1 flex items-center justify-end gap-4 min-w-0">
           <button className="text-muted-foreground hover:text-foreground">
-            <Mic2 size={18} />
+            <Mic2 size={20} />
           </button>
           <button className="text-muted-foreground hover:text-foreground">
-            <ListMusic size={18} />
+            <ListMusic size={20} />
           </button>
           <button className="text-muted-foreground hover:text-foreground">
-            <Laptop2 size={18} />
+            <Laptop2 size={20} />
           </button>
           <div className="flex items-center gap-2 w-28">
             <button className="text-muted-foreground hover:text-foreground">
-              {volume > 0 ? <Volume2 size={18} /> : <Volume1 size={18} />}
+              {volume > 0 ? <Volume2 size={20} /> : <Volume1 size={20} />}
             </button>
             <div className="w-full bg-muted/70 rounded-full h-1 group cursor-pointer">
               <div
@@ -97,7 +97,7 @@ const Player = () => {
             </div>
           </div>
           <button className="text-muted-foreground hover:text-foreground">
-            <Maximize2 size={18} />
+            <Maximize2 size={20} />
           </button>
         </div>
       </div>

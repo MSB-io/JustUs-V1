@@ -49,7 +49,7 @@ const LibraryPage = () => {
 
   return (
     <div>
-      <div className="flex items-center gap-4 mb-8 border-b border-border">
+      <div className="p-3 flex items-center gap-4 mb-8 border-b border-border">
         {tabs.map((tab) => (
           <button
             key={tab}
