@@ -5,10 +5,13 @@ import Player from "./components/Player";
 import HomePage from "./pages/HomePage";
 import ExplorePage from "./pages/ExplorePage";
 import LibraryPage from "./pages/LibraryPage";
+import FullScreenPlayerPage from "./pages/FullScreenPlayerPage";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [isFullScreenPlayerVisible, setIsFullScreenPlayerVisible] =
+    useState(false);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -23,6 +26,15 @@ function App() {
     }
   };
 
+  const handleSetCurrentPage = (page: string) => {
+    setIsFullScreenPlayerVisible(false);
+    setCurrentPage(page);
+  };
+
+  const toggleFullScreenPlayer = () => {
+    setIsFullScreenPlayerVisible((prev) => !prev);
+  };
+
   return (
     <div className="h-screen flex flex-col font-sans bg-background text-foreground p-4">
       <Header
@@ -32,14 +44,25 @@ function App() {
       <div className="flex flex-1 overflow-hidden items-center">
         <Sidebar
           currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
+          setCurrentPage={handleSetCurrentPage}
           isCollapsed={isSidebarCollapsed}
         />
         <main className="flex-1 overflow-y-auto bg-surface self-stretch">
-          <div className="p-4">{renderPage()}</div>
+          <div className="p-4 h-full">
+            {isFullScreenPlayerVisible ? (
+              <FullScreenPlayerPage onClose={function (): void {
+                throw new Error("Function not implemented.");
+              } } />
+            ) : (
+              renderPage()
+            )}
+          </div>
         </main>
       </div>
-      <Player />
+      <Player
+        onMaximize={toggleFullScreenPlayer}
+        isMaximized={isFullScreenPlayerVisible}
+      />
     </div>
   );
 }

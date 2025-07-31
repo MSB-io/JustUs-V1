@@ -10,13 +10,19 @@ import {
   Volume1,
   Volume2,
   Maximize2,
+  Minimize2,
   ThumbsUp,
   ThumbsDown,
   MoreHorizontal,
 } from "lucide-react";
 import { currentSong } from "../constants/data";
 
-const Player = () => {
+interface PlayerProps {
+  onMaximize: () => void;
+  isMaximized: boolean;
+}
+
+const Player: React.FC<PlayerProps> = ({ onMaximize, isMaximized }) => {
   const [isPlaying, setIsPlaying] = React.useState(true);
   const [volume] = React.useState(75);
 
@@ -96,8 +102,11 @@ const Player = () => {
               ></div>
             </div>
           </div>
-          <button className="text-muted-foreground hover:text-foreground">
-            <Maximize2 size={20} />
+          <button
+            onClick={onMaximize}
+            className="text-muted-foreground hover:text-foreground"
+          >
+            {isMaximized ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
           </button>
         </div>
       </div>
