@@ -50,9 +50,7 @@ function App() {
         <main className="flex-1 overflow-y-auto bg-surface self-stretch">
           <div className="p-4 h-full">
             {isFullScreenPlayerVisible ? (
-              <FullScreenPlayerPage onClose={function (): void {
-                throw new Error("Function not implemented.");
-              } } />
+              <FullScreenPlayerPage onClose={toggleFullScreenPlayer} />
             ) : (
               renderPage()
             )}

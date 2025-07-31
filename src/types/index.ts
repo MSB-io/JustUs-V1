@@ -14,3 +14,10 @@ export interface Media {
   subtitle: string;
   artwork: string;
 }
+
+export interface LibraryPlaylist {
+  id: number;
+  title: string;
+  description: string;
+  artwork: string;
+}
